@@ -35,7 +35,10 @@ public class LoginActivity extends AppCompatActivity {
 
 
         login_btn = findViewById(R.id.textView_login);
-        login_btn.setOnClickListener(view -> { logUserIn();});
+        login_btn.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        });
 
 
         enteredFname = findViewById(R.id.editTextTextPersonName);
