@@ -14,8 +14,8 @@ import com.example.wheels_to_go.R;
 
 public class SearchVehicleFragment extends Fragment {
 
-    private Button button_add;
-    private Button button_search;
+    private TextView button_add;
+    private TextView button_search;
     private TextView car_make;
     private TextView car_model;
     private TextView car_year;
@@ -54,8 +54,10 @@ public class SearchVehicleFragment extends Fragment {
         car_year = viewer.findViewById(R.id.car_year);
         car_platenumber = viewer.findViewById(R.id.car_platenumber);
 
-        button_add = viewer.findViewById(R.id.button_add);
-        button_search = viewer.findViewById(R.id.button_seach);
+
+        button_add = viewer.findViewById(R.id.add_textview_id);
+        button_search = viewer.findViewById(R.id.searchInventory_textview_id);
+
 
         button_add.setOnClickListener(view -> store_vehicle());
 

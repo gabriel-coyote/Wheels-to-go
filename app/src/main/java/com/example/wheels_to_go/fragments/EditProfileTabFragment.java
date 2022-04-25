@@ -27,7 +27,7 @@ public class EditProfileTabFragment extends Fragment {
     private TextView birth_date;
     private TextView employee_ID;
     private TextView SSN;
-    private Button button_save;
+    private TextView button_save;
 
 
     /* ********************************************************************** */

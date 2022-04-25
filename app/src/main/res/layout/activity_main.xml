@@ -7,27 +7,41 @@
     android:background="@drawable/main_backround"
     tools:context=".MainActivity">
 
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/menu_navigationView"
-        android:layout_width="250dp"
-        android:layout_height="match_parent"
-        android:background="@drawable/side_bar_gradient"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/navigation_menu"
-        tools:context=".MainActivity" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <FrameLayout
-       android:id="@+id/main_fragment_container"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-       >
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/menu_navigationView"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/side_bar_gradient"
+            android:visibility="visible"
 
-    </FrameLayout>
+            app:itemIconTint="@drawable/navigation_colors"
+            app:itemTextColor="@drawable/navigation_colors"
+            app:menu="@menu/navigation_menu"
+            tools:context=".MainActivity" />
+
+        <FrameLayout
+            android:id="@+id/main_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+
+        android:text="Wheels-To-Go"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
