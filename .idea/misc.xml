@@ -14,11 +14,11 @@
         <entry key="app/src/main/res/drawable/ic_profile.xml" value="0.3425" />
         <entry key="app/src/main/res/drawable/main_backround.xml" value="0.3005" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.13007812500000002" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1834197998046875" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_edit_empprofile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_edit_profile_edit_tab.xml" value="0.24569091796875003" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile_edit_tab.xml" value="0.10134277343750003" />
         <entry key="app/src/main/res/layout/fragment_search_vehicle.xml" value="0.1764373779296875" />
       </map>
     </option>
