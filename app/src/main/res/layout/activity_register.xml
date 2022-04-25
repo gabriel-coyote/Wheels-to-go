@@ -4,4 +4,199 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/main_backround"/>
+    android:background="@drawable/main_backround">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:fontFamily="@font/play"
+        android:text="Register New Employee"
+        android:textColor="#FFFFFF"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="236dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_profile" />
+
+    <TextView
+        android:id="@+id/button_save"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="988dp"
+        android:background="@drawable/ic_rectangle_save"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/birth_date"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="816dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Date Of Birth"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/sex"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/SSN"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="900dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="SSN"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/eployee_ID"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/eployee_ID"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="708dp"
+        android:layout_marginTop="900dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Employee ID"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/sex"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="708dp"
+        android:layout_marginTop="816dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Sex"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="500dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="708dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/ic_rectangle_large"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPostalAddress"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/location"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/location"
+        android:layout_width="500dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="708dp"
+        android:layout_marginTop="568dp"
+        android:background="@drawable/ic_rectangle_large"
+        android:ems="10"
+        android:hint="Dealer Location"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/last_name"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Last"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/fist_name"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/fist_name"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="708dp"
+        android:layout_marginTop="480dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="First"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/salary"
+        android:layout_width="500dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="708dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/ic_rectangle_large"
+        android:ems="10"
+        android:hint="Salary"
+        android:inputType="numberDecimal"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/address"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
