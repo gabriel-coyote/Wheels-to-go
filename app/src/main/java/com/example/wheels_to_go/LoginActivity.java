@@ -63,14 +63,12 @@ public class LoginActivity extends AppCompatActivity {
             // Create our MySQL database connection
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            Connection conn = null;
-            DriverManager.getConnection("jdbc:mysql://localhost:3306/CompanyDB?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC");
 
-            //Connection connect_BOI = DriverManager.getConnection("jdbc:mysql://localhost:3306/CompanyDB?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC","root","ranger1213st");
+            Connection connect_BOI = DriverManager.getConnection("jdbc:mysql://localhost:3306/CompanyDB?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC","root","ranger1213st");
 
             //Creating a statement to execute Queries
-           // Statement statement = connect_BOI.createStatement();
-            Statement statement = conn.createStatement();
+            Statement statement = connect_BOI.createStatement();
+            //Statement statement = conn.createStatement();
 
 
             String query = "select Firstname, Id from employee where Firstname='John' and Id=3356";
