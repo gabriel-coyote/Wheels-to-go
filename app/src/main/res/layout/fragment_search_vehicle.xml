@@ -11,8 +11,9 @@
         android:layout_width="530dp"
         android:layout_height="771dp"
         android:text="TextView"
-        tools:layout_editor_absoluteX="1370dp"
-        tools:layout_editor_absoluteY="146dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/car_make"
@@ -29,95 +30,101 @@
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272"
+        app:layout_constraintVertical_bias="0.266"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/car_model"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/ic_edit_profile_button"
         android:ems="10"
         android:hint="Model"
         android:inputType="textPersonName"
         android:paddingLeft="32sp"
         android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.352"
+        app:layout_constraintTop_toBottomOf="@+id/car_make"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/car_year"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/ic_edit_profile_button"
         android:ems="10"
         android:hint="Year"
         android:inputType="textPersonName"
         android:paddingLeft="32dp"
         android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429"
+        app:layout_constraintTop_toBottomOf="@+id/car_model"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/car_platenumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/ic_edit_profile_button"
         android:ems="10"
         android:hint="Plate Number"
         android:inputType="textPersonName"
         android:paddingLeft="32dp"
         android:textSize="32sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.508"
+        app:layout_constraintTop_toBottomOf="@+id/car_year"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
-        android:id="@+id/SSN"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="          Search Vehicle"
-        android:textColor="@color/white"
-        android:textSize="52sp"
-        app:layout_constraintBottom_toTopOf="@+id/car_make"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.761" />
-
-    <Button
-        android:id="@+id/button_add"
-        android:layout_width="683dp"
-        android:layout_height="69dp"
-        android:layout_marginTop="152dp"
-        android:backgroundTintMode="src_over"
+        android:layout_marginTop="90dp"
+        android:background="@drawable/ic_add_rec"
+        android:gravity="center"
         android:text="Add"
-        android:textSize="24sp"
+        android:textColor="#80FFFFFF"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/car_platenumber" />
 
-    <Button
-        android:id="@+id/button_seach"
-        android:layout_width="690dp"
-        android:layout_height="74dp"
-        android:layout_marginBottom="196dp"
-        android:text="Search Inventory"
-        android:textSize="24sp"
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/play"
+        android:text="Find Car"
+        android:textColor="#FFFFFF"
+        android:textSize="90sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.117" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/ic_search_rec"
+        android:gravity="center"
+        android:text="Search Inventory"
+        android:textColor="#80FFFFFF"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
