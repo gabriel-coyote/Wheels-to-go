@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -12,7 +14,12 @@ import com.example.wheels_to_go.R;
 
 public class SearchVehicleFragment extends Fragment {
 
-
+    private Button button_add;
+    private Button button_search;
+    private TextView car_make;
+    private TextView car_model;
+    private TextView car_year;
+    private TextView car_platenumber;
 
     View viewer;
 
@@ -42,9 +49,28 @@ public class SearchVehicleFragment extends Fragment {
         }else {
             viewer = inflater.inflate(R.layout.fragment_search_vehicle, container, false);
         }
+        car_make = viewer.findViewById(R.id.car_make);
+        car_model = viewer.findViewById(R.id.car_model);
+        car_year = viewer.findViewById(R.id.car_year);
+        car_platenumber = viewer.findViewById(R.id.car_platenumber);
+
+        button_add = viewer.findViewById(R.id.button_add);
+        button_search = viewer.findViewById(R.id.button_seach);
+
+        button_add.setOnClickListener(view -> store_vehicle());
+
 
         return viewer;
     }
+
+
+    private void store_vehicle(){
+
+    }
+
+
+
+
 
 
 

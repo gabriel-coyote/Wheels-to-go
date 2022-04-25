@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/main_backround">
 
+    <TextView
+        android:id="@+id/car_list"
+        android:layout_width="530dp"
+        android:layout_height="771dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="1370dp"
+        tools:layout_editor_absoluteY="146dp" />
+
     <EditText
         android:id="@+id/car_make"
         android:layout_width="wrap_content"
@@ -76,7 +84,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/SSN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
