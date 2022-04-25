@@ -23,6 +23,8 @@ public class SearchVehicleFragment extends Fragment {
 
     View viewer;
 
+
+
     /* ********************************************************************** */
     public SearchVehicleFragment(){
         // Required empty public constructor
