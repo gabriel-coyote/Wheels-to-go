@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.wheels_to_go.fragments.EditProfileTabFragment;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case R.id.menu_logOut:
                     //TODO: Log employee out
+                    logout();
                     break;
                 default: break;
             }
@@ -53,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+    /* ********************************************************************** */
+    private void logout(){
+
+        // Switch to login activity
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
 
     /* ********************************************************************** */
     /* FUNCTION NAME:    loadFragment
