@@ -160,19 +160,117 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/editTextTextPhoneNumber"
         android:layout_width="500dp"
         android:layout_height="43dp"
         android:layout_marginTop="604dp"
         android:layout_marginEnd="624dp"
         android:background="@drawable/ic_rectangle_large"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:hint="Dealer Location"
+        android:inputType="textPersonName"
         android:paddingLeft="20dp"
         android:textColor="#FFFFFF"
         android:textColorHint="#80FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextAddress"
+        android:layout_width="500dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="624dp"
+        android:background="@drawable/ic_rectangle_large"
+        android:ems="10"
+        android:hint="Address"
+        android:inputType="textPostalAddress"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPhoneNumber" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName5"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="764dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Date Of Birth"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName4"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="764dp"
+        android:layout_marginEnd="900dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Sex"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName6"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="848dp"
+        android:layout_marginEnd="900dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="Employee ID"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName7"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="848dp"
+        android:background="@drawable/ic_rectangle_small"
+        android:ems="10"
+        android:hint="SSN"
+        android:inputType="textPersonName"
+        android:paddingLeft="20dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName6"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/editTextSave8"
+        android:layout_width="225dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="928dp"
+        android:layout_marginEnd="900dp"
+        android:background="@drawable/ic_rectangle_save"
+        android:ems="10"
+        android:gravity="center"
+        android:text="Save"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#80FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

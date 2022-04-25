@@ -10,7 +10,8 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_edit_empprofile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_edit_profile_edit_tab.xml" value="0.14931335449218752" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_edit_profile_edit_tab.xml" value="0.12801361083984375" />
       </map>
     </option>
   </component>
