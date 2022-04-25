@@ -16,7 +16,7 @@
         <entry key="app/src/main/res/drawable/side_bar_gradient.xml" value="0.356" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.10018463134765623" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1834197998046875" />
-        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.1756484985351563" />
         <entry key="app/src/main/res/layout/fragment_edit_empprofile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_edit_profile_edit_tab.xml" value="0.22890625" />
