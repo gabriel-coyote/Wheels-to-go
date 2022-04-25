@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_title"
+        android:title="Wheels-To-Go"
+        android:enabled="false"
+        />
+
+    <item
+        android:id="@+id/menu_empty1"
+        android:title=""
+        android:enabled="false"
+        />
+
+    <item
+        android:id="@+id/menu_empty2"
+        android:title=""
+        android:enabled="false"
+        />
+
+    <item
+        android:id="@+id/menu_empty3"
+        android:title=""
+        android:enabled="false"
+        />
+
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile"
+        android:enabled="true"
+        />
+
+    <item
+        android:id="@+id/menu_inventory"
+        android:icon="@drawable/ic_car"
+        android:title="Inventory"
+        android:enabled="true"
+        />
+
+
+    <item
+        android:id="@+id/menu_logOut"
+        android:icon="@drawable/ic_login"
+        android:title="Log Out"
+        android:enabled="true"
+        />
+
+</menu>
