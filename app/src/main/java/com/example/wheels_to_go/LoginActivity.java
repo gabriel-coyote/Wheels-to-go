@@ -1,37 +1,22 @@
 package com.example.wheels_to_go;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.StrictMode;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.jar.Manifest;
 
 public class LoginActivity extends AppCompatActivity {
 
 
-    private static String ip = "172.69.70.124";
-    private static String port = "3306";
-    private static String Classes = "net.sourceforge.jtds.jdbc.Driver";
-    private static String database = "CompanyDB";
-    private static String username = "root";
-    private static String password = "ranger1213st";
-    private static String url = "jdbc:jtds:sqlserver://"+ip+":"+port+"/"+database;
-
-    private Connection connection = null;
 
     private EditText enteredPassword, enteredFname;
     private TextView register_btn, login_btn;
@@ -50,8 +35,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         login_btn = findViewById(R.id.textView_login);
-        login_btn.setOnClickListener(view -> { logUserIn2();});
-
+        login_btn.setOnClickListener(view -> { logUserIn();});
 
 
         enteredFname = findViewById(R.id.editTextTextPersonName);
@@ -60,46 +44,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void start(View view){
-        ActivityCompat.requestPermissions(this, new String[]{}, PackageManager.PERMISSION_GRANTED);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        try{
-            Class.forName(Classes);
-
-            connection = DriverManager.getConnection(url, username, password);
-            alertDialog("Connected");
-        }catch (Exception e){
-
-        }
-    }
-
-
-    /* ********************************************************************** */
-    private void logUserIn2(){
-        boolean valid = false;
-
-        String employee_name = "Gabe";
-        int emp_password = 12345;
-
-        String input_name = enteredFname.getText().toString().trim();
-        String input_password = enteredPassword.getText().toString().trim();
-        int input_password_ = Integer.parseInt(input_password);
-
-        if(input_name.equals(employee_name) && input_password_==emp_password){
-            valid = true;
-        }else{
-            //alertDialog("Incorrect");
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-        }
-
-
-
-    }
-
-    /* ********************************************************************** */
     /* ********************************************************************** */
     private void logUserIn(){
 
@@ -178,7 +122,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        valid = true;
         if(valid){
             // Switch to main activity
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
