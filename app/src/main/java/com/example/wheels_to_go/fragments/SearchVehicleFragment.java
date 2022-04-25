@@ -20,6 +20,9 @@ public class SearchVehicleFragment extends Fragment {
     private TextView car_model;
     private TextView car_year;
     private TextView car_platenumber;
+    private TextView car_list;
+
+    private String carPopulation = "License plate: '123ABCD' \nYear: 2010 \nMake: 'Ford' \nModel: 'Raptor'";
 
     View viewer;
 
@@ -53,6 +56,8 @@ public class SearchVehicleFragment extends Fragment {
         car_model = viewer.findViewById(R.id.car_model);
         car_year = viewer.findViewById(R.id.car_year);
         car_platenumber = viewer.findViewById(R.id.car_platenumber);
+        car_list = viewer.findViewById(R.id.car_list);
+
 
 
         button_add = viewer.findViewById(R.id.add_textview_id);
@@ -66,8 +71,9 @@ public class SearchVehicleFragment extends Fragment {
     }
 
 
-    private void store_vehicle(){
-
+    private void store_vehicle()
+    {
+        car_list.setText(carPopulation);
     }
 
 
