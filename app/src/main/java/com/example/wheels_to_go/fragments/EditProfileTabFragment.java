@@ -1,19 +1,15 @@
 package com.example.wheels_to_go.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.wheels_to_go.R;
+import androidx.fragment.app.Fragment;
 
-import org.w3c.dom.Text;
+import com.example.wheels_to_go.R;
 
 
 public class EditProfileTabFragment extends Fragment {
@@ -73,6 +69,8 @@ public class EditProfileTabFragment extends Fragment {
         return viewer;
     }
 
+
+    /* ********************************************************************** */
     private void changeInfo(){
         String fname_input = first_name.getText().toString().trim();
         String lname_input = last_name.getText().toString().trim();

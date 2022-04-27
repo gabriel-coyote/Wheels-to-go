@@ -41,6 +41,19 @@
         android:enabled="true"
         />
 
+    <item
+        android:id="@+id/menu_employee"
+        android:icon="@drawable/ic_briefcase"
+        android:title="Employees"
+        android:enabled="true"
+        />
+
+
+    <item android:title="Serviced"
+        android:id="@+id/menu_serviced"
+        android:icon="@drawable/ic_car"
+        android:enabled="true"/>
+
 
     <item
         android:id="@+id/menu_logOut"

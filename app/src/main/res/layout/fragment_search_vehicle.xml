@@ -8,9 +8,13 @@
 
     <TextView
         android:id="@+id/car_list"
-        android:layout_width="530dp"
-        android:layout_height="771dp"
-        android:text="TextView"
+        android:layout_width="533dp"
+        android:layout_height="812dp"
+        android:background="@drawable/round_corner_v6"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="left"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

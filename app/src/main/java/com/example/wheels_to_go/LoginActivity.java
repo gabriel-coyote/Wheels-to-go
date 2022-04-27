@@ -1,8 +1,8 @@
 package com.example.wheels_to_go;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +16,12 @@ import java.sql.Statement;
 
 public class LoginActivity extends AppCompatActivity {
 
+
+    // Database Parameters of Aruze mySQL server
+    private final String DBurl ="jdbc:mysql://cs4354-project.mysql.database.azure.com:3306/companydb?useSSL=false&requireSSL=false";
+    private final String DBuser ="daddy@cs4354-project";
+    private final String DBpassword = "ranger1213ST";
+    private Connection myDbConn = null;
 
 
     private EditText enteredPassword, enteredFname;
@@ -35,10 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         login_btn = findViewById(R.id.textView_login);
-        login_btn.setOnClickListener(view -> {
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-        });
+        login_btn.setOnClickListener(view -> logUserIn());
 
 
         enteredFname = findViewById(R.id.editTextTextPersonName);
@@ -50,71 +53,103 @@ public class LoginActivity extends AppCompatActivity {
     /* ********************************************************************** */
     private void logUserIn(){
 
-        Boolean valid = false;
+        boolean valid = false;
+        boolean found = false;
 
         String fname = enteredFname.getText().toString().trim();
         String password = enteredPassword.getText().toString().trim();
         int password_id = Integer.parseInt(password);
 
 
+        // Run network connection on different Thread; not main thread
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
 
         try{
-            alertDialog("Attempting conection...");
             // Create our MySQL database connection
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-
-            Connection connect_BOI = DriverManager.getConnection("jdbc:mysql://localhost:3306/CompanyDB?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC","root","ranger1213st");
+            Class.forName("com.mysql.jdbc.Driver");
+            myDbConn = DriverManager.getConnection(DBurl, DBuser, DBpassword);
 
             //Creating a statement to execute Queries
-            Statement statement = connect_BOI.createStatement();
-            //Statement statement = conn.createStatement();
+            Statement statement1 = myDbConn.createStatement();
+            Statement statement2 = myDbConn.createStatement();
+            Statement statement3 = myDbConn.createStatement();
+            Statement statement4 = myDbConn.createStatement();
 
 
-            String query = "select Firstname, Id from employee where Firstname='John' and Id=3356";
+            // Check if attempted login is for a CLERK, MANAGER, MECHANIC or REGULAR employee
+            ResultSet resultsCLERK = statement1.executeQuery("select distinct emp.Firstname, emp.Id from employee emp, clerk c where c.Id=emp.Id");
+            ResultSet resultsMANAGER = statement2.executeQuery("select distinct emp.Firstname, emp.Id from employee emp, manager m where m.Id=emp.Id");
+            ResultSet resultsMECHANIC = statement3.executeQuery("select distinct emp.Firstname, emp.Id from employee emp, mechanic m where m.Id=emp.Id");
+            ResultSet resultsREGULAR = statement4.executeQuery("select * from employee");
 
-            //Execute the query, and get a hav result set
-            //ResultSet results = statement.executeQuery("SELECT * FROM EMPLOYEE");
-            ResultSet results = statement.executeQuery(query);
+            // Iterate through each row in the clerks table result
+            while(resultsCLERK.next() && !found){
+                // If the current employee credentials match then set valid to true
+                if(fname.equals(resultsCLERK.getString("Firstname")) &&
+                    password_id==resultsCLERK.getInt("Id")){
 
-
-            //alertDialog(results.getString("Firstname"));
-
-            if(results.getString("Firstname").isEmpty()){
-                alertDialog("Empyt Result: firstname");
-            }else{
-                alertDialog("Result: firstname not empty");
-            }
-            if(results.next()){
-                valid = true;
-            }
-            // Iterate through the results to find if employee exists
-            /*
-            while(results.next()){
-
-                alertDialog("Parsing through results");
-                String firstName = results.getString("Firstname");
-                int ID = results.getInt("Id");
-
-                System.out.println(results.getString("Firstname") + ", " + results.getInt("Id"));
-                // If valid login matches an employee ;log in
-                if(fname.equals(firstName) && password_id==ID){
+                    MainActivity.LoggedInUser = fname;
+                    MainActivity.LoggedInUserType = "Clerk";
                     valid = true;
+                    found = true;
                     break;
-
                 }
 
-                valid = true;
-
             }
 
 
-             */
-            // Close our statement
-            statement.close();
+            // Iterate through each row in the manager table result
+            while(resultsMANAGER.next() && !found){
+                // If the current employee credentials match then set valid to true
+                if(fname.equals(resultsMANAGER.getString("Firstname")) &&
+                        password_id==resultsMANAGER.getInt("Id")){
 
+                    MainActivity.LoggedInUser = fname;
+                    MainActivity.LoggedInUserType = "Manager";
+                    valid = true;
+                    found = true;
+                    break;
+                }
+
+            }
+
+            // Iterate through each row in the mechanics table result
+            while(resultsMECHANIC.next() && !found){
+                // If the current employee credentials match then set valid to true
+                if(fname.equals(resultsMECHANIC.getString("Firstname")) &&
+                        password_id==resultsMECHANIC.getInt("Id")){
+
+                    MainActivity.LoggedInUser = fname;
+                    MainActivity.LoggedInUserType = "Mechanic";
+                    valid = true;
+                    found = true;
+                    break;
+                }
+
+            }
+
+            // Iterate through each row in the employee table result
+            while(resultsREGULAR.next() && !found){
+                // If the current employee credentials match then set valid to true
+                if(fname.equals(resultsREGULAR.getString("Firstname")) &&
+                        password_id==resultsREGULAR.getInt("Id")){
+
+                    MainActivity.LoggedInUser = fname;
+                    MainActivity.LoggedInUserType = "Employee";
+                    valid = true;
+                    found = true;
+                    break;
+                }
+
+            }
+            // Close our statement
+            statement1.close();
+            statement2.close();
+            statement3.close();
+            statement4.close();
             //Close our connection boi
-            //connect_BOI.close();
+            myDbConn.close();
 
         } catch (Exception e){
             System.err.println("Got an exception!");
