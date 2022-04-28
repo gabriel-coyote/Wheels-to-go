@@ -87,14 +87,14 @@ public class SearchVehicleFragment extends Fragment {
 
 
     /* ********************************************************************** */
-    private void findCar(){
+    private void addCar(){
 
 
 
     }
 
     /* ********************************************************************** */
-    private void addCar(){
+    private void findCar(){
 
 
         boolean found = false;
@@ -104,8 +104,8 @@ public class SearchVehicleFragment extends Fragment {
         String PlateNum = car_platenumber.getText().toString().trim();
         String Results_textview = "";
 
-        String customer_y_n = "";
-        String mechanic_y_n = "";
+        String customer_y_n = "N/A";
+        String mechanic_y_n = "N/A";
 
         // Run network connection on different Thread; not main thread
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -135,9 +135,14 @@ public class SearchVehicleFragment extends Fragment {
                     ResultSet infoResults = statement2.executeQuery("select c.Firstname, c.Lastname, m.Id from customer c, mechanic m WHERE m.Fixes='"+PlateNum+"' AND c.Platenumber='"+PlateNum+"';\n");
                     while (infoResults.next()){
 
+                        customer_y_n = "Purchased By: " +infoResults.getString("Firstname") + " " +  infoResults.getString("Lastname");
+                        mechanic_y_n = "Mechanic ID: " + infoResults.getInt("Id");
 
+                        customer = true;
+                        mechanic = true;
 
                     }
+
 
 
                     // Assigning location text str d=to displays
@@ -153,13 +158,13 @@ public class SearchVehicleFragment extends Fragment {
 
                     Results_textview =
                             "Vehicle Info: \n"+
-                            "\t\t\t Price: "+
-                                    "\t\t\t\t\t "+carResults.getInt("Price")+"k"+
-                            "\t\t\t Store Located At: "+
-                                    "\t\t\t\t\t "+location+
-                            "\t\t\t Customer: "+
-                                    "\t\t\t\t\t "+customer_y_n+
-                            "\t\t\t Serviced: "+
+                            "\t\t\t Price: \n"+
+                                    "\t\t\t\t\t "+carResults.getInt("Price")+"k\n"+
+                            "\t\t\t Store Located At: \n"+
+                                    "\t\t\t\t\t "+location+"\n"+
+                            "\t\t\t Customer: \n"+
+                                    "\t\t\t\t\t "+customer_y_n+"\n"+
+                            "\t\t\t Serviced: \n"+
                                     "\t\t\t\t\t "+mechanic_y_n;
 
                     car_list.setText(Results_textview);

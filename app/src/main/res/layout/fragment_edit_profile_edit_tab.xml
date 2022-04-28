@@ -7,7 +7,7 @@
     android:background="@drawable/main_backround">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/ServicedTextBox"
         android:layout_width="1670dp"
         android:layout_height="2dp"
         android:background="#FFFFFF"
